@@ -1,6 +1,6 @@
 apply plugin: 'checkstyle'
 
-ext.checkstyleConfigDir = "$configDir/checkstyle"
+ext.checkstyleConfigDir = "${configDir}/checkstyle"
 
 checkstyle {
 	toolVersion = "7.1"
