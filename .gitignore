@@ -90,4 +90,6 @@ local.properties
 # Code Recommenders
 .recommenders/
 
-
+### Sonar ###
+#Sonar generated dir
+/.sonar/
