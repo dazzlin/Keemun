@@ -1,15 +1,11 @@
 apply plugin: 'java'
-apply plugin: 'pmd'
-apply plugin: "jacoco"
-apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
 
 ext.configDir = new File(rootDir, 'config')
 
-//apply from: "${rootDir}/gradle/jacoco.gradle"
-//apply from: "${rootDir}/gradle/checkstyle.gradle"
-//apply from: "${rootDir}/gradle/findbugs.gradle"
-//apply from: "${rootDir}/gradle/pmd.gradle"
+apply from: "${rootDir}/gradle/jacoco.gradle"
+apply from: "${rootDir}/gradle/checkstyle.gradle"
+apply from: "${rootDir}/gradle/findbugs.gradle"
+apply from: "${rootDir}/gradle/pmd.gradle"
 
 
 
@@ -22,39 +18,5 @@ dependencies {
 
 repositories {
 	mavenCentral()
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.enabled true 
-    }
-}
-
-ext.checkstyleConfigDir = "${configDir}/checkstyle"
-
-checkstyle {
-	toolVersion = "7.1"
-	configFile = new File(checkstyleConfigDir, 'google_checks.xml')
-}
-tasks.withType(Checkstyle) {
-    reports {
-        xml.enabled false
-        html.enabled true
-        html.stylesheet resources.text.fromFile('config/xsl/checkstyle-custom.xsl')
-    }
-}
-findbugs {
-	toolVersion = '3.0.1'
-	ignoreFailures = true
-	effort = 'max'
-}
-tasks.withType(FindBugs) {
-    reports {
-        xml.enabled false
-        html.enabled true
-        html.stylesheet resources.text.fromFile('config/xsl/findbugs-custom.xsl')
-    }
 }
 
