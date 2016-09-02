@@ -93,3 +93,6 @@ local.properties
 ### Sonar ###
 #Sonar generated dir
 /.sonar/
+
+### CheckStyle ###
+.checkstyle
