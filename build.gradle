@@ -14,7 +14,8 @@ sourceCompatibility = 1.8
 
 dependencies {
 	testCompile 'junit:junit:4.12'
-    compile 'org.springframework:spring-context:4.3.3.RELEASE'
+	compile 'org.apache.commons:commons-configuration2:2.1'
+	compile 'commons-validator:commons-validator:1.5.1'
 }
 
 repositories {
